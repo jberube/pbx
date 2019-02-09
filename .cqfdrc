@@ -1,0 +1,15 @@
+; This configuration file is intended to be used by the tool CQFD if it is installed on
+; the development environment. Basically, the tools execute a 'command' in a docker container built from
+; a Dockerfile located at: .cqfd/docker/Dockerfile
+;
+; For more information, see: https://github.com/savoirfairelinux/cqfd
+
+[project]
+org='bidouilleur'
+name='pbx'
+
+[build]
+command='./src/install-asterisk'
+files=
+archive=
+flavors=
