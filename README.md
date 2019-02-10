@@ -15,3 +15,6 @@ Then, to provision and start the VM:
 ```
 vagrant up --provision
 ```
+
+## Resources
+

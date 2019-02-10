@@ -1,4 +1,29 @@
 #!/bin/bash
 
+set -e
+
+cd "$( dirname "${BASH_SOURCE[0]}" )"
+
 echo 'Installing Asterisk...'
 
+echo '...installing dependencies'
+./install-prerequisites
+
+echo '...fetching Asterisk'
+wget --quiet https://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz
+
+echo '...extracting Asterisk'
+tar xfvz asterisk-16-current.tar.gz
+
+echo '...building Asterisk'
+cd asterisk-16.*.*
+DEBIAN_FRONTEND=noninteractive ./contrib/scripts/install_prereq install
+./configure
+make
+make install
+
+echo '...installing initialization script'
+make config
+
+echo '...configuring logrotate'
+make install-logrotate
