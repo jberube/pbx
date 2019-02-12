@@ -1,1 +1,4 @@
 .vagrant/
+src/jansson-2.12/
+src/asterisk-16.1.1/
+src/asterisk-*.gz

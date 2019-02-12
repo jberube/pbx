@@ -40,4 +40,3 @@ The default cqfd flavor will provision a PBX in development environment:
 ```
 cqfd
 ```
-
